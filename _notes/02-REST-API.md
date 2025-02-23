@@ -20,3 +20,6 @@
   - Resource: `/games`
 
 - Response is send as a JSON object (if there's is a body in the response)
+
+# 02. Setting up the CRUD request handlers 
+- vid at 35:52
