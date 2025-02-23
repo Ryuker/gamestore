@@ -52,14 +52,47 @@ app.Run();
   - we then specify an anonimous function (arrow function) to execute something when the request is received
     - this is where the route controller logic goes.
   
-# 03. .csproj file
+# 03. Other project files
+
+## .csproj
 - this contains settings specifications
   - like the SDK, target framework etc
   - this where we will be declaring all the dependencies on libraries
 
-# 04. appsettings.json
+## appsettings.json
 - this contains configuration settings
 - we have a development version of this file as well, these configurations only apply during development.
 
+## launchSettings.json
+- we find this in the `Properties` folder
+- this contains settings for running in http mode or https mode.
+- in this we can specify the environment during development
+- we also specify the `applicationUrl` here.
+
+## obj
+- this contains files for use during the application process
+
+## bin
+- this will contain the final compiled files for our application
+
+# 04. Building the project
+
+## GUI version
+- simplest method is to right click in the solution explorer on the folder with the name of the App and click build
+  - this is compiled to the `bin` folder in a .dll file
+
+## CLI version
+``` Shell
+dotnet build
+```
+- this builds the solution of the project based on the folder we're in.
+
+## Hotkey
+- we can use `ctrl + shift + B` and select build in the command palette
+
+# 05. Running the App
+- we can press `F5` to run a debug session, this asks for a configuration
+  - we pick default for this
+  - this builds the project and then runs it, it opens it in a browser on completion.
 
 
