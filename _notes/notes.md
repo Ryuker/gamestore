@@ -45,5 +45,13 @@ app.Run();
 
 - to run the actual application after building we call `app.Run()`
 
+## Request Handler
+- we use the `MapGet()` method on the app object to handle route requests
+  - this is similar to what we do with Express in node.js
+  - we specify the route as first parameter
+  - we then specify an anonimous function (arrow function) to execute something when the request is received
+    - this is where the route controller logic goes.
+  
+
 
 
