@@ -40,8 +40,8 @@ app.Run();
 ## WebApplication Builder and running the app
 - The `WebApplication` class has a `CreateBuilder` method. 
   - this instantiates a new builder into the variable
-  - we then run `Build()` on the builder reference and pass the result to an `app` reference
-  - on this `app` reference we can specify routes etc
+  - we then run `Build()` on the builder reference to build an instance of the application which we store in the `app` variable
+  - on this `app` variable we can specify routes etc
 
 - to run the actual application after building we call `app.Run()`
 
