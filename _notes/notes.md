@@ -25,5 +25,25 @@ dotnet new list
   - this gives us a minimal setup so we can learn to expand it.
   - for some reason the solution is created inside the root of the directory
     - not sure how to change this, would prefer for it to be inside the project folder.
-  - as  
+
+# 02. Program.cs file
+- this is the root file of the project which runs the app.
+``` C# Program.cs
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World!");
+
+app.Run();
+```
+
+## WebApplication Builder and running the app
+- The `WebApplication` class has a `CreateBuilder` method. 
+  - this instantiates a new builder into the variable
+  - we then run `Build()` on the builder reference and pass the result to an `app` reference
+  - on this `app` reference we can specify routes etc
+
+- to run the actual application after building we call `app.Run()`
+
+
 
