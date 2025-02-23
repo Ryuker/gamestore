@@ -99,9 +99,11 @@ dotnet build
   - debugging can be time consuming so we can also run withou debugging, we use `shift+F5` for this
 
 ## CLI method
+- we have to be in the App folder for this
 ``` Shell 
 dotnet run
 ```
+- to shut down the app we press `ctrl + c` like we do with node.js
 
 
 
