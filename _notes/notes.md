@@ -52,6 +52,14 @@ app.Run();
   - we then specify an anonimous function (arrow function) to execute something when the request is received
     - this is where the route controller logic goes.
   
+# 03. .csproj file
+- this contains settings specifications
+  - like the SDK, target framework etc
+  - this where we will be declaring all the dependencies on libraries
+
+# 04. appsettings.json
+- this contains configuration settings
+- we have a development version of this file as well, these configurations only apply during development.
 
 
 
