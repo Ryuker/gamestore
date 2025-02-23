@@ -94,5 +94,14 @@ dotnet build
 - we can press `F5` to run a debug session, this asks for a configuration
   - we pick default for this
   - this builds the project and then runs it, it opens it in a browser on completion.
+    - we can use breakpoints during this session
+  
+  - debugging can be time consuming so we can also run withou debugging, we use `shift+F5` for this
+
+## CLI method
+``` Shell 
+dotnet run
+```
+
 
 
