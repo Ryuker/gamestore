@@ -97,7 +97,18 @@ app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id));
 # 03. Adding Games to the API
 
 ## Create Game DTO
-- 
+- we create a new Record, `CreateGameDto.cs`
+- we specify its properties
+  - we omit ID since this will be auto generated
+
+```C# Dtos/CreateGameDto.cs
+public record class CreateGameDto(
+  string Name,
+  string Genre,
+  decimal Price,
+  DateOnly ReleaseDate
+);
+```
 
 
   
