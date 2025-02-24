@@ -1,4 +1,7 @@
 GET http://localhost:5299
 
-### 
+### All Games
 GET http://localhost:5299/games
+
+### First Game
+GET http://localhost:5299/games/1

@@ -31,6 +31,8 @@ app.MapGet("/", () => "Hello from GamesStore API!");
 // GET /games 
 app.MapGet("games", () => games);
 
+// GET /games/{id}
+app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id));
 
 
 

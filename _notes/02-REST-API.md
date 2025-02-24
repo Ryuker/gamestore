@@ -85,7 +85,16 @@ List<GameDto> games = [
 ```C# Program.cs
 // Games GET Request Handler
 app.MapGet("games", () => games);
-```    
+``` 
+
+## A GET handler to handle games by ID requests
+- simple stuff
+- but we use `{id}` on the route to retrieve an id from the request
+```C#
+// GET /games/{id}
+app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id));
+```
+
 
 
   
