@@ -50,5 +50,31 @@ public record class GameDto(
 );
 ```
 
+## Adding temporary Games List
+- this is temporary so we don't need to use database yet
+  - we use `M` next to the price to let the compiler know it's a decimal.
+``` C# Program.cs
+List<GameDto> games = [
+  new (
+    1,
+    "Street Fighter II",
+    "Fighting",
+    19.99M,
+    new DateOnly(1992, 7, 15)),
+  new (
+    2,
+    "Final Fantasy XIV",
+    "Roleplaying",
+    59.99M,
+    new DateOnly(2010, 9, 30)),
+  new (
+    3,
+    "Fifa 23",
+    "Sports",
+    69.99M,
+    new DateOnly(2022, 9, 27)),
+];
+```
+
   
 
