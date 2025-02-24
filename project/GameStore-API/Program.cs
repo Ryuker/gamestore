@@ -34,6 +34,18 @@ app.MapGet("games", () => games);
 // GET /games/{id}
 app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id));
 
+// POST /games
+app.MapPost("games", (CreateGameDto newGame) => { 
+  GameDto game = new(
+    games.Count + 1,
+    newGame.Name,
+    newGame.Genre,
+    newGame.Price,
+    newGame.ReleaseDate);  
+  
+  games.Add(game);
+});
+
 
 
 app.Run();

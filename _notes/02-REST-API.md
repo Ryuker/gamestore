@@ -110,6 +110,31 @@ public record class CreateGameDto(
 );
 ```
 
+## Adding POST route
+- we use `MapPost` on the app object for this
+  - we now expect a `CreateGameDto` as type for the newGame to add
+  - we then create a new GameDto instance
+    - populate this with the properties from newGame 
+    - and add this to the list.
+
+```C#
+// POST /games
+app.MapPost("games", (CreateGameDto newGame) => { 
+  GameDto game = new(
+    games.Count + 1,
+    newGame.Name,
+    newGame.Genre,
+    newGame.Price,
+    newGame.ReleaseDate);  
+  
+  games.Add(game);
+});
+```
+
+## Returning results when we've created a game
+- we need to specify the route
+- we then return a `Result`
+
 
   
 
