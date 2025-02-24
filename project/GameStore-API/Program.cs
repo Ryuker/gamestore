@@ -25,10 +25,13 @@ List<GameDto> games = [
     new DateOnly(2022, 9, 27)),
 ];
 
+// GET Request Handler
+app.MapGet("/", () => "Hello from GamesStore API!");
+
 // Games GET Request Handler
 app.MapGet("games", () => games);
 
-// GET Request Handler
-app.MapGet("/", () => "Hello World!");
+
+
 
 app.Run();
