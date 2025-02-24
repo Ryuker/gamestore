@@ -133,7 +133,24 @@ app.MapPost("games", (CreateGameDto newGame) => {
 
 ## Returning results when we've created a game
 - we need to specify the route
-- we then return a `Result`
+  - we do this on the GET Id request handler
+    - we specify a constant at the top 
+  ``` C#
+  const string GetGameEndpointName = "GetGame";
+  ```
+    - we specify WithName and use the constant as a name
+```C#
+app.MapGet("games/{id}", (int id) => games.Find(game => game.Id == id))
+  .WithName(GetGameEndpointName);
+```
+- we then return a `Result` in the POST request handler
+  - we pass: 
+    - the route name
+    - the id to use for the route (we'll be calling it from the server)
+    - the payload (optional, this is the game instance in this case) 
+```C#
+return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
+```
 
 
   
