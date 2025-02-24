@@ -153,5 +153,10 @@ return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
 ```
 
 
+# 04. Updating Games in the API
+- PUT request handler 
+- left vid at 01:03:12 
+
+
   
 
