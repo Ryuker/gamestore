@@ -22,4 +22,7 @@
 - Response is send as a JSON object (if there's is a body in the response)
 
 # 02. Setting up the CRUD request handlers 
-- vid at 35:52
+- we set `launchBrowser` to false in `launchSettings.json`
+  - this prevents the browser from opening when we run a debugging session.
+
+  
