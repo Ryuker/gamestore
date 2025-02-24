@@ -25,4 +25,30 @@
 - we set `launchBrowser` to false in `launchSettings.json`
   - this prevents the browser from opening when we run a debugging session.
 
+## Defining DTOs
+- it's best to use the solution explorer to add new files
+  - this pops up the command palette so we can pick templates for classes etc
+
+- DTO stands for `Data Transfer Object`
+
+- we use the solution explorer to add a new file and pick `Record` as the template
+  - a Record is a type of class that's immutable by default
+    - this type offers various benefits for comparisons
+    - it also comes with some limitations.
+  -  when a record is created it can not be changed
+    - this is good for DTOs because they carry data from one point to another without any form of modification.
+  - Records also reduce the boilerplate code that comes with class definitions for data holding of DTOs.
+
+## Defining DTO properties
+``` C# Dtos/GameDto.cs
+public record class GameDto(
+  int Id, 
+  string Name, 
+  string Genre, 
+  decimal Price,
+  DateOnly ReleaseDate
+);
+```
+
   
+
