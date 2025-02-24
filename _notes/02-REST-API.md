@@ -76,5 +76,17 @@ List<GameDto> games = [
 ];
 ```
 
+## A GET handler to handle games GET requests
+- we use `app.MapGet()` to handle this request
+  - as first paramater we specify the route
+    - `games` in this case
+      - we use plural because we are allowing access to multiple games.
+  - we use a lambda to return the games list when the request is received.
+```C# Program.cs
+// Games GET Request Handler
+app.MapGet("games", () => games);
+```    
+
+
   
 
