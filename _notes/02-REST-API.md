@@ -155,7 +155,17 @@ return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
 
 # 04. Updating Games in the API
 - PUT request handler 
-- left vid at 01:03:12 
+- we add a new `UpdateGameDto` record to `Dtos`
+  - for now the properties are the same as CreateGameDto
+    - but it's convention to make a dedicated Dto for this.
+``` C# Dtos/UpdateGameDto.cs
+public record class UpdateGameDto(
+  string Name,
+  string Genre,
+  decimal Price,
+  DateOnly ReleaseDate
+);
+```
 
 
   
