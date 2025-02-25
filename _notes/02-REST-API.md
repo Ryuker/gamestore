@@ -211,6 +211,20 @@ app.MapDelete("games/{id}", (int id) => {
 });
 ```
 
+# 06. Handling Resource Not Found situations
+- we modify the GET games by ID handler 
+  - we give it a proper body
+  - we store game in a `GameDto` nullable variable
+  - we use a ternary to send back `NotFound` when the game isn't in the list
+    - else we send an `Ok` with the game
+      - we can't just send back game since we need to always send a Result
+```C#
+GameDto? game = games.Find(game => game.Id == id);
+
+return game is null ? Results.NotFound() : Results.Ok(game);
+```
+
+
 
   
 
