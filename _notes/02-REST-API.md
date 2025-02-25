@@ -155,6 +155,8 @@ return Results.CreatedAtRoute(GetGameEndpointName, new { id = game.Id }, game);
 
 # 04. Updating Games in the API
 - PUT request handler 
+
+## Adding CreateGameDto
 - we add a new `UpdateGameDto` record to `Dtos`
   - for now the properties are the same as CreateGameDto
     - but it's convention to make a dedicated Dto for this.
@@ -165,6 +167,32 @@ public record class UpdateGameDto(
   decimal Price,
   DateOnly ReleaseDate
 );
+```
+
+## Specifying PUT endpoint
+- we have to specify an `{id}` on the route again
+  - in the handler we find the index of the game in the list (temporary approach)
+  - we create a new game at the index
+  - we then return a NoContent result, this is by convention.
+
+``` C# Program.cs
+// PUT /games/{id}
+app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) => {
+  
+  var index = games.FindIndex(game => game.Id == id); // Find the index of the game
+
+  // create a new game at the index
+  games[index] = new GameDto(
+    id,
+    updatedGame.Name,
+    updatedGame.Genre,
+    updatedGame.Price,
+    updatedGame.ReleaseDate
+  );
+
+  return Results.NoContent();
+
+});
 ```
 
 
