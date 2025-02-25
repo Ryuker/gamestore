@@ -233,8 +233,6 @@ return game is null ? Results.NotFound() : Results.Ok(game);
 if (index == -1) return Results.NotFound();   // if we can't find it, return NotFound
 ```
 
-# 07. 
-
 
 
   
