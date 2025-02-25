@@ -195,6 +195,24 @@ app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) => {
 });
 ```
 
+# 05. Deleting Games in the API
+- repetition of the above
+  - we specify the ID in the route
+  - we find the index of the game in the list by ID
+  - we remove the game in the list at the index
+  - we return NoContent by convention
+  
+```C# Program.cs
+// DELETE /games/{id}
+app.MapDelete("games/{id}", (int id) => {
+  var index = games.FindIndex(game => game.Id == id);
+
+  games.RemoveAt(index);
+
+  return Results.NoContent();
+});
+```
+
 
   
 

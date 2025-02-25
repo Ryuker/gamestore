@@ -27,3 +27,6 @@ Content-Type: application/json
   "price": 9.99,
   "releaseDate": "1992-07-15"
 }
+
+### Delete Game at ID 2
+DELETE http://localhost:5299/games/2
