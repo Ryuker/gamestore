@@ -197,17 +197,15 @@ app.MapPut("games/{id}", (int id, UpdateGameDto updatedGame) => {
 
 # 05. Deleting Games in the API
 - repetition of the above
-  - we specify the ID in the route
-  - we find the index of the game in the list by ID
-  - we remove the game in the list at the index
+  - but we use RemoveAll to RemoveAll the games that match the id
+    - since this ID is unique it will only remove the one game.
   - we return NoContent by convention
-  
+
 ```C# Program.cs
 // DELETE /games/{id}
 app.MapDelete("games/{id}", (int id) => {
-  var index = games.FindIndex(game => game.Id == id);
 
-  games.RemoveAt(index);
+  games.RemoveAll(game => game.Id == id);
 
   return Results.NoContent();
 });
