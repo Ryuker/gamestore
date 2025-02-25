@@ -212,6 +212,8 @@ app.MapDelete("games/{id}", (int id) => {
 ```
 
 # 06. Handling Resource Not Found situations
+
+## GET by ID request handler
 - we modify the GET games by ID handler 
   - we give it a proper body
   - we store game in a `GameDto` nullable variable
@@ -222,6 +224,13 @@ app.MapDelete("games/{id}", (int id) => {
 GameDto? game = games.Find(game => game.Id == id);
 
 return game is null ? Results.NotFound() : Results.Ok(game);
+```
+
+## PUT by ID request handler
+- we add this line
+  - the index will be `-1` if the index can not be found, so this is why this works.
+```C# Program.cs
+if (index == -1) return Results.NotFound();   // if we can't find it, return NotFound
 ```
 
 
