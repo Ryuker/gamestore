@@ -1,8 +1,14 @@
+using GameStore_Client.ApiConnection;
+
 var builder = WebApplication.CreateBuilder(args);
+
+var gameStoreApiUrl = builder.Configuration["GameStoreApiUrl"] ?? throw new Exception("GameStoreApiUrl is not set");
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddHttpClient();
+builder.Services.AddHttpClient<GamesClient>(client => client.BaseAddress = new Uri(gameStoreApiUrl));
+
+
 
 var app = builder.Build();
 

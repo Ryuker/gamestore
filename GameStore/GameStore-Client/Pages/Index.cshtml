@@ -1,7 +1,50 @@
 ﻿@page
 @model IndexModel
+
+@using GameStore_Client.ApiConnection;
+@using GameStore_Client.ApiConnection.Dtos;
+
+@inject GamesClient Client;
 @{
     ViewData["Title"] = "Home Page";
+}
+
+@{
+  /*
+  List<GameDto> games = [
+    new (
+      1,
+      "Street Fighter II",
+      "Fighting",
+      19.99M,
+      new DateOnly(1992, 7, 15)),
+    new (
+      2,
+      "Final Fantasy XIV",
+      "Roleplaying",
+      59.99M,
+      new DateOnly(2010, 9, 30)),
+    new (
+      3,
+      "Fifa 23",
+      "Sports",
+      69.99M,
+      new DateOnly(2022, 9, 27)),
+  ];
+  */
+  List<GameDto> games = new List<GameDto>();
+
+  Console.WriteLine("Getting games");
+
+  async Task GetGames(){
+    games = await Client.GetGamesAsync();
+    Console.WriteLine(games);
+  }
+  
+  await GetGames();
+  
+  Console.WriteLine("Retrieved games");
+
 }
 
 <div class="text-center">
@@ -16,5 +59,11 @@
         <div class="col">Game #2</div>
         <div class="col">Game #3</div>
       </div>
+    </div>
+
+    <div>
+      @foreach(var game in games){
+        <div>@game</div>
+      }
     </div>
 </div>
