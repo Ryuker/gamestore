@@ -1,6 +1,13 @@
 using GameStore_Client.ApiConnection;
+using GameStore_Client.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Tailwind Recompile after each file change
+if (builder.Environment.IsDevelopment())
+{
+  builder.Services.AddHostedService<TailwindHostedService>();
+}
 
 var gameStoreApiUrl = builder.Configuration["GameStoreApiUrl"] ?? throw new Exception("GameStoreApiUrl is not set");
 

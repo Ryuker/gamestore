@@ -10,4 +10,7 @@
 # Usefull
 
 fetching using client factory setup using HttpClient - [guide](https://juliocasal.com/blog/ASP.NET-Core-HttpClient-Tutorial)
+installing tailwind (v3) - [guide](https://levelup.gitconnected.com/tailwindcss-with-net-8-seamless-integration-guide-38ceaa06a5ea)
+
+
   
