@@ -1,8 +1,8 @@
 ﻿@page
 @model IndexModel
-
 @using GameStore_Client.ApiConnection;
 @using GameStore_Client.ApiConnection.Dtos;
+@using GameStore_Client.Models;
 
 @inject GamesClient Client;
 @{
@@ -10,29 +10,49 @@
 }
 
 @{
-  /*
-  List<GameDto> games = [
-    new (
-      1,
-      "Street Fighter II",
-      "Fighting",
-      19.99M,
-      new DateOnly(1992, 7, 15)),
-    new (
-      2,
-      "Final Fantasy XIV",
-      "Roleplaying",
-      59.99M,
-      new DateOnly(2010, 9, 30)),
-    new (
-      3,
-      "Fifa 23",
-      "Sports",
-      69.99M,
-      new DateOnly(2022, 9, 27)),
+  List<GameModel> games = [
+    new GameModel{
+      Id = 1,
+      Name = "Street Fighter II",
+      Genre = "Fighting",
+      Price = 19.99M,
+      ReleaseDate = new DateOnly(1992, 7, 15)
+    },
+    new GameModel{
+      Id = 2,
+      Name = "Final Fantasy XIV",
+      Genre = "Roleplaying",
+      Price = 59.99M,
+      ReleaseDate = new DateOnly(2010, 9, 30)
+    },
+    new GameModel{
+      Id = 3,
+      Name = "Fifa 23",
+      Genre = "Sports",
+      Price = 69.99M,
+      ReleaseDate = new DateOnly(2022, 9, 27)
+    }
   ];
-  */
-  List<GameDto> games = new List<GameDto>();
+  //List<GameDto> games = new List<GameDto>();
+
+  bool showGame = true;
+
+  
+  GameModel myGame = new GameModel{
+    Name = "Super Smash Bros. Melee",
+    Genre = "Platform Fighting",
+    Price = 59.99M,
+    ReleaseDate = new DateOnly(2001, 11, 21)
+  };
+
+  GameModel myGame2 = new GameModel{
+    Name = "Street Fighter II",
+    Genre = "Fighting",
+    Price = 19.99M,
+    ReleaseDate = new DateOnly(1992, 7, 15)
+  };
+
+  Console.WriteLine(myGame.Name);
 
   Console.WriteLine("Getting games");
 
@@ -41,7 +61,7 @@
     Console.WriteLine(games);
   }
   
-  await GetGames();
+  //await GetGames();
   
   Console.WriteLine("Retrieved games");
 
@@ -51,7 +71,7 @@
     <h1 class="display-2">Welcome to GameStore</h1>
     <h2 class="lead">Your one stop shop for interactive entertainment</h2>
     
-    <div class="text-blue-600 text-md font-bold ">Hello, This is Tailwindcss & .NET 8</div>
+    <div class="text-blue-600 text-md font-bold underline mt-5">Hello, This is Tailwindcss & .NET 8</div>
 
     <div class="container mt-5">
       <div class="row flex justify-content-center">Games Catalog</div>
@@ -64,7 +84,28 @@
 
     <div>
       @foreach(var game in games){
-        <div>@game</div>
+        <vc:game-card game=@game />
       }
     </div>
+    <div class="container mx-auto flex justify-center">
+      @if(showGame){
+        
+        <div class="bg-red-200/20 w-fit p-4 rounded border-2 border-black/20 fit-content my-10">
+          <div class="text-xl">@myGame.Name</div>
+          <div class="flex gap-5 text-sm mt-2">
+            <div>@myGame.Genre</div>
+            <div>@myGame.Price</div>
+            <div>@myGame.ReleaseDate</div>
+          </div>
+        
+        </div>
+      }
+      else {
+        <div class="mt-20 font-bold text-xl">Game Melee Display Disabled</div>
+      }
+    </div>
+    @{ 
+      
+    }
+    
 </div>
