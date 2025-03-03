@@ -12,8 +12,13 @@
     <UpToDateCheckBuilt Include="tailwind.config.js" Set="Css" />
   </ItemGroup>
 
+   <!-- <Target Name="StylesCompile" BeforeTargets="BeforeBuild"> -->
+      <!-- On Error, write the stderr as a build error -->
+      <!-- <Exec ConsoleToMSBuild="true" Command="npm run build:scoped-css" /> -->
+  <!-- </Target> -->
+
   <Target Name="Tailwind" BeforeTargets="Build">
-    <Exec Command="npm run css:build" />
+    <Exec Command="npm run build:css" />
   </Target>
 
 </Project>

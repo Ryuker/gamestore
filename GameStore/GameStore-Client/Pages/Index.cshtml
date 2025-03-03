@@ -35,7 +35,7 @@
   ];
   //List<GameDto> games = new List<GameDto>();
 
-  bool showGame = true;
+  bool showSpecialOffer = true;
 
   
   GameModel myGame = new GameModel{
@@ -69,43 +69,42 @@
 
 <div class="text-center">
     <h1 class="display-2">Welcome to GameStore</h1>
-    <h2 class="lead">Your one stop shop for interactive entertainment</h2>
+    <span class="lead">Your one stop shop for interactive entertainment</span>
+
+    <div class="text-5xl font-bold mt-10">New In Stock</div>
     
-    <div class="text-blue-600 text-md font-bold underline mt-5">Hello, This is Tailwindcss & .NET 8</div>
-
-    <div class="container mt-5">
-      <div class="row flex justify-content-center">Games Catalog</div>
-      <div class="row">
-        <div class="col">Game #1</div>
-        <div class="col">Game #2</div>
-        <div class="col">Game #3</div>
-      </div>
-    </div>
-
-    <div>
+    <div class="container flex flex-wrap justify-center gap-5 my-10">
       @foreach(var game in games){
         <vc:game-card game=@game />
       }
     </div>
-    <div class="container mx-auto flex justify-center">
-      @if(showGame){
-        
-        <div class="bg-red-200/20 w-fit p-4 rounded border-2 border-black/20 fit-content my-10">
-          <div class="text-xl">@myGame.Name</div>
-          <div class="flex gap-5 text-sm mt-2">
-            <div>@myGame.Genre</div>
-            <div>@myGame.Price</div>
-            <div>@myGame.ReleaseDate</div>
-          </div>
-        
+
+    <div class="container mx-auto flex justify-center mt-10">
+      @if(showSpecialOffer){
+        <div>
+          <div class="text-xl text-red-500">Special Offer!</div>
+          <vc:game-card game=@myGame />
         </div>
       }
       else {
-        <div class="mt-20 font-bold text-xl">Game Melee Display Disabled</div>
+       
       }
     </div>
-    @{ 
-      
-    }
+
+    <div class="mt-10">
+      @{ 
+        DateTime today = DateTime.Now;
+        DayOfWeek weekDay = today.DayOfWeek;
+      }
+      @switch (weekDay)
+      {
+        case (DayOfWeek.Sunday):
+          <p>Today is Sunday, the shop is closed, we'll be open again on Monday.</p>
+          break;
+        default:
+          <p>Today is @weekDay... the shop is open, come on over!</p>
+        break;
+      }
+    <div>
     
 </div>
