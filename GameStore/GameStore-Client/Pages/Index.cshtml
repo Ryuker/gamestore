@@ -67,11 +67,11 @@
 
 }
 
-<div class="text-center">
+<div class="container text-center">
     <h1 class="display-2">Welcome to GameStore</h1>
     <span class="lead">Your one stop shop for interactive entertainment</span>
 
-    <div class="text-5xl font-bold mt-10">New In Stock</div>
+    <div class="text-5xl font-bold mt-10">New In Stock!</div>
     
     <div class="container flex flex-wrap justify-center gap-5 my-10">
       @foreach(var game in games){
@@ -91,7 +91,7 @@
       }
     </div>
 
-    <div class="mt-10">
+    <div class="container mt-10">
       @{ 
         DateTime today = DateTime.Now;
         DayOfWeek weekDay = today.DayOfWeek;
