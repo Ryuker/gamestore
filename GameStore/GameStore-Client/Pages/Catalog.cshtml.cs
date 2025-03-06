@@ -8,8 +8,6 @@ namespace GameStore_Client.Pages;
 
 public class CatalogModel : PageModel
 {
-    private readonly IHttpClientFactory _clientFactory;
-
     [BindProperty]
     public List<GameModel> Games { get; set; }
     private readonly GamesClient _client;
@@ -23,7 +21,6 @@ public class CatalogModel : PageModel
 
     public async Task<IActionResult> OnGetAsync()
     {
-      Console.WriteLine("Running Async Method");
       var res =  await _client.GetGamesAsync();
       if (res == null)
       {

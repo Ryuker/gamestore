@@ -1,5 +1,3 @@
-using System.Xml;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace GameStore_Client.Pages;
@@ -15,6 +13,5 @@ public class IndexModel : PageModel
 
     public void OnGet()
     {
-      Console.WriteLine("Hello from Index Model");     
     }
 }
