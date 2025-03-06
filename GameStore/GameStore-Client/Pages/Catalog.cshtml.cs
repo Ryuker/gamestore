@@ -15,4 +15,6 @@ public class CatalogModel : PageModel
     {
       Console.WriteLine("Hello from Catalog Model");   
     }
+
+
 }
