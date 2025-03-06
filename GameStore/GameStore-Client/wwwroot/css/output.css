@@ -582,8 +582,25 @@ video {
   margin-top: 0.5rem;
 }
 
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
 .flex {
   display: flex;
+}
+
+.min-h-fit {
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.min-h-svh {
+  min-height: 100svh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-fit {
@@ -593,6 +610,10 @@ video {
 
 .max-w-lg {
   max-width: 32rem;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .flex-col {
