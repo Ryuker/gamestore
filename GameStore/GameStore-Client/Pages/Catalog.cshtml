@@ -2,6 +2,10 @@
 @using GameStore_Client.Models;
 @model CatalogModel
 @{
+  var games = Model.Games;
+  games.ForEach(game => Console.WriteLine(game.Name));
+  //games.ForEach(game => Console.WriteLine(game.Name));
+  /*
   List<GameModel> games = [
     new GameModel{
       Id = 1,
@@ -25,21 +29,22 @@
       ReleaseDate = new DateOnly(2022, 9, 27)
     }
   ];
+  */
   
-  async Task GetGames(){
+  //async Task GetGames(){
     //games = await Client.GetGamesAsync();
-    Console.WriteLine(games);
-  }
+    //Console.WriteLine(games);
+  //}
   
   //await GetGames();
   
-  Console.WriteLine("Retrieved games");
+  //Console.WriteLine("Retrieved games");
 
 }
 
 <h1>Games Catalog</h1>
 
-<div class="container px-0 space-y-5">
+<div class="container px-0 flex flex-wrap gap-5 justify-center mt-10">
   @foreach(var game in games){
     <vc:game-card game=@game />
   }
