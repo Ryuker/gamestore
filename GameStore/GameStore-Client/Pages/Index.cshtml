@@ -33,7 +33,6 @@
       ReleaseDate = new DateOnly(2022, 9, 27)
     }
   ];
-  //List<GameDto> games = new List<GameDto>();
 
   bool showSpecialOffer = true;
 
@@ -44,27 +43,6 @@
     Price = 59.99M,
     ReleaseDate = new DateOnly(2001, 11, 21)
   };
-
-  GameModel myGame2 = new GameModel{
-    Name = "Street Fighter II",
-    Genre = "Fighting",
-    Price = 19.99M,
-    ReleaseDate = new DateOnly(1992, 7, 15)
-  };
-
-  Console.WriteLine(myGame.Name);
-
-  Console.WriteLine("Getting games");
-
-  async Task GetGames(){
-    //games = await Client.GetGamesAsync();
-    Console.WriteLine(games);
-  }
-  
-  //await GetGames();
-  
-  Console.WriteLine("Retrieved games");
-
 }
 
 <div class="container text-center">

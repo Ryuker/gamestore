@@ -1,6 +1,9 @@
 # Razor Pages Frontend notes
 - frontend to communicate with the API
 
+# Usefull:
+- Razer Pages CheatSheet - [sheet](https://www.codecademy.com/learn/asp-net-i/modules/asp-net-razor-syntax/cheatsheet)
+
 # 01. Setup
 - created `GameStore-Client` in the projects folder
   - using `.NET create` in the command-palette

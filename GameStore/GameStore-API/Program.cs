@@ -25,6 +25,30 @@ List<GameDto> games = [
     "Sports",
     69.99M,
     new DateOnly(2022, 9, 27)),
+  new (
+    4,
+    "Super Smash Bros. Melee",
+    "Platform Fighting",
+    59.99M,
+    new DateOnly(2001, 11, 21)),
+  new (
+    5,
+    "Kirby's Dreamland",
+    "Platformer",
+    19.99M,
+    new DateOnly(1992, 04, 27)),
+  new (
+    6,
+    "Super Mario 64",
+    "Platformer",
+    19.99M,
+    new DateOnly(1996, 06, 23)),
+  new (
+    6,
+    "The Legend of Zelda",
+    "Action Adventure",
+    19.99M,
+    new DateOnly(1986, 02, 21)),
 ];
 
 // GET /

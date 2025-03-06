@@ -1,3 +1,46 @@
 @page
+@using GameStore_Client.Models;
 @model CatalogModel
+@{
+  List<GameModel> games = [
+    new GameModel{
+      Id = 1,
+      Name = "Street Fighter II",
+      Genre = "Fighting",
+      Price = 19.99M,
+      ReleaseDate = new DateOnly(1992, 7, 15)
+    },
+    new GameModel{
+      Id = 2,
+      Name = "Final Fantasy XIV",
+      Genre = "Roleplaying",
+      Price = 59.99M,
+      ReleaseDate = new DateOnly(2010, 9, 30)
+    },
+    new GameModel{
+      Id = 3,
+      Name = "Fifa 23",
+      Genre = "Sports",
+      Price = 69.99M,
+      ReleaseDate = new DateOnly(2022, 9, 27)
+    }
+  ];
+  
+  async Task GetGames(){
+    //games = await Client.GetGamesAsync();
+    Console.WriteLine(games);
+  }
+  
+  //await GetGames();
+  
+  Console.WriteLine("Retrieved games");
+
+}
+
 <h1>Games Catalog</h1>
+
+<div class="container px-0 space-y-5">
+  @foreach(var game in games){
+    <vc:game-card game=@game />
+  }
+</div>
