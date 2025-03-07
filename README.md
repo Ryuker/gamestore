@@ -32,4 +32,4 @@ dotnet watch
 
 
 ## Styling isn't the focus
-- The client has Tailwind implemented, however the focus of the project was learning to understand ASP.NET Core and gaining familiarity with Razor Pages. The styling thus looks rather bland but can easily be improved upon.
+The client has Tailwind implemented, however the focus of the project was learning to understand ASP.NET Core and gaining familiarity with Razor Pages, working with models and the syntax etc. Though the divs use Tailwind utility classes the project thus looks rather bland but can easily be improved upon.
