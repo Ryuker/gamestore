@@ -1,5 +1,5 @@
-# gamestore-api
-Gamestore API, built with ASP.NET Core to gain familiarity with the framework.
+# GameStore API and Client
+Gamestore API and CLient, built with ASP.NET Core to gain familiarity with the framework.
 
 
 # App Specifics
@@ -25,7 +25,7 @@ cd GameStore/GameStore-API
 dotnet run
 ```
 
-**Running while watching file changes**
+**Running while watching for file changes**
 ```Shell
 dotnet watch
 ```
