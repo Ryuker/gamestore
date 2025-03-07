@@ -1,9 +1,12 @@
 # gamestore-api
 Gamestore API, built with ASP.NET Core to gain familiarity with the framework.
 
-# Client - 
-- uses Node 20.16.0 for Tailwind (use NVM)
 
+# App Specifics
+- Both API and Client are using `.NET 8.0.100`
+- Client uses `Node 20.16.0` for Tailwind (use NVM)
+  - there's no need to run Node during development, it gets run automatically by the build process.
+  
 # Run instructions
 - The API needs to be running before running the client.
 
