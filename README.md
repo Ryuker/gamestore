@@ -1,5 +1,5 @@
 # GameStore API and Client
-Gamestore API and CLient, built with ASP.NET Core to gain familiarity with the framework.
+Gamestore API and Client, built with ASP.NET Core to gain familiarity with the framework.
 
 
 # App Specifics
